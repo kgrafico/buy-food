@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   onText(text: string) {
-    debugger;
    this.filter = text;
   }
 
