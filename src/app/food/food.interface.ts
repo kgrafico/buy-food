@@ -6,4 +6,5 @@ export interface Food {
   offert: number;
   description: string;
   coin: string;
+  voucher: boolean;
 }

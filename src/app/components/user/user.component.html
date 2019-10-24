@@ -5,7 +5,11 @@
     <div class="header-box">
       <p class="category">{{food.category}}</p>
       <p  *ngIf="!food.stock >= 1" [ngClass]="{disabled : !food.stock >= 1}" class="sold-out">Sold Out</p>
-      <p class="price">{{food.price}}{{food.coin}}</p>
+      <div *ngIf="food.voucher" class="voucher">
+          <p class="price-old">{{food.price}}{{food.coin}}</p>
+          <p class="price-voucher">{{food.offert}}{{food.coin}}</p>
+      </div>
+      <p *ngIf="!food.voucher" class="price">{{food.price}}{{food.coin}}</p>
       <h5 class="description">{{food.description}}</h5>
       <h4 class="title">{{food.name}}</h4>
       <div class="button-box">

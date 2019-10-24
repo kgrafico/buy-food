@@ -50,6 +50,11 @@ export class ShoppingCartService {
    * getTotal
    */
   getTotal() {
-    return this.item.reduce((total, product: Food) => { return total + product.price; }, 0);
+    return this.item.reduce((total, product: Food) => {
+      if (product && product.voucher) {
+        return total + product.offert;
+      }
+      return total + product.price;
+    }, 0);
   }
 }

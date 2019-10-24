@@ -72,6 +72,26 @@
       font-family: sans-serif;
     }
 
+    .voucher {
+      display: flex;
+      margin: 55px 0px 0px;
+      .price-old{
+        color: #9db5ec;
+        padding-right: 10px;
+        text-decoration:line-through;
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+      .price-voucher{
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+    }
+
     .header-box{
       display: flex;
       align-items: center;
