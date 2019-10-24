@@ -1,4 +1,5 @@
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-height: 100%;
@@ -15,32 +16,59 @@
   .image {
     background: url('../../../assets/img-ciudad.jpg');
     width: 100%;
-    height: 51%;
-    background-size: cover;
+    height: 294px;
+    background-size: 200px;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position-y: -90px;
+    background-position-y: 70px;
   }
 
   .textContent {
     width: 80%;
     padding-left: 10px;
     @media (min-width: 600px) {
-      width: 100%;
+      width: auto;
     }
     .title {
-      margin: 0;
+      margin: 15px 0px 15px 0px;
       display: flex;
+      font-weight: 500;
+      color: #9db6ec;
+      font-family: sans-serif;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
     }
+    .category {
+      position: absolute;
+      top: 0;
+      background-color: #c8c8ca;
+      color: white;
+      border-radius: 21px;
+      padding: 9px;
+    }
+
+    .description{
+      font-weight: 200; 
+      font-size: .8em;
+      margin: 0;
+      color: #9ea09e;
+    }
+
+    .price {
+      font-size: 1.2em;
+      font-weight: 500;
+      margin: 55px 0px 0px;
+      font-family: sans-serif;
+    }
 
     .header-box{
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      // justify-content: space-between;
       margin: 5px 0;
+      flex-direction: column;
+      align-items: flex-start;
     }
     .text {
       margin: 0;
@@ -55,5 +83,32 @@
         background-color: #ebebef;
       }
     }
+    .button-box {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 98%;
+      margin: 0 0 10px 0;
+      width: 100%;
+      .addButton {
+        background-color:#9db6ec;
+        border-radius:22px;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:10px;
+        padding:8px 33px;
+        text-decoration:none;
+        text-shadow:0px 0px 0px #283966;
+      }
+      .addButton:hover {
+        background-color:#476e9e;
+      }
+      .addButton:active {
+        position:relative;
+        top:1px;
+      }
+    }
+    button:focus {outline:0;}
   }
 }

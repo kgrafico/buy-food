@@ -1,3 +1,9 @@
+app-user {
+  border: 1px solid #e8e3e3;
+  @media (max-width: 700px) {
+    margin: 15px;
+  }
+}
 .user-list {
   display: grid;
   grid-gap: 10px;
@@ -13,6 +19,6 @@
   }
   @media (min-width: 1024px) {
     margin: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
