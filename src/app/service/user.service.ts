@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, of } from 'rxjs';
+import { of } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Food } from '../food/food.interface';
@@ -46,10 +45,16 @@ export class UserService {
     { name: 'Paper Plates', category: 'Miscellaeous Items', price: 16.19, stock: 7, offert: null, voucher: false, description: '100 x 200 each', coin: '£', foodId: 18 },
   ];
 
-  constructor(private http: HttpClient) {}
+  voucher: Array<object> = [{id: '20OFFPROMO'}];
+
+  constructor() {}
 
   getFood() {
     return of(this.food);
+  }
+
+  getVoucher() {
+    return of(this.voucher);
   }
 
 }

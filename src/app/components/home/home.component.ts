@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getFood().subscribe((food) => {this.listFood = food; console.log(food); });
+    this.userService.getFood().subscribe((food) => {this.listFood = food; });
   }
 
   onText(text: string) {

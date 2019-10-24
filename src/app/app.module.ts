@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StringfilterPipe } from './stringfilter.pipe';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckVoucherComponent } from './components/check-voucher/check-voucher.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FoodSearchComponent,
     UserComponent,
     StringfilterPipe,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CheckVoucherComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

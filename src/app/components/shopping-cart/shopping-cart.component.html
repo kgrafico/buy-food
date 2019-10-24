@@ -33,7 +33,8 @@
         <tr class="footer-box">
           <td>
             <span class="total">Total: </span>
-            <span *ngIf="discountDrinks" class="discount-price"> {{total + discountDrinksPrice}}£ -{{discountSignDrinks}} (Discount {{discountNameDrinks}})</span>
+            <app-check-voucher (validOrInvalid)="discountVouche($event)"></app-check-voucher>
+            <span *ngIf="discountDrinks" class="discount-price top"> {{total + discountDrinksPrice}}£ -{{discountSignDrinks}} (Discount {{discountNameDrinks}})</span>
             <span *ngIf="discountCooking" class="discount-price"> {{total + discountCookingPrice}}£ -{{discountSignCooking}} (Discount {{discountNameCooking}})</span>
             <span class="price-total">{{total}}£</span>
           </td>

@@ -1,0 +1,8 @@
+<div>
+    <input type="text" class="inputStyle" placeholder="Voucher..." [(ngModel)]="data" [disabled]=disabled>
+    <button class="submit-button" (click)="onValidVoucher(data)"><em class="fa fa-paper-plane fa-lg"></em></button>
+</div>
+<div>
+    <span *ngIf="discountVoucher" class="discount-price success"> Voucher valid! -20£</span>
+    <span *ngIf="discountVoucherError" class="discount-price error"> The Voucher is invalid</span>
+</div>

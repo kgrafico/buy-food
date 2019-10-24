@@ -1,0 +1,36 @@
+.inputStyle {
+    background-color: #f4f4f5;
+    padding: 5px;
+    border: 0;
+    border-radius: 20px;
+    &:focus {
+        outline: none;
+        background-color: #ebebef;
+    }
+}
+
+.success {
+    color: #9db5ec;
+    font-size: .7em;
+}
+.error {
+    color: #e04142;
+    font-size: .7em;
+}
+
+em {
+    color: #9db5ec;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    width: 28px;
+    border-radius: 20px;
+}
+button:focus {outline:0;}
+
+input:disabled {
+	background-color : #cef1cf;
+}

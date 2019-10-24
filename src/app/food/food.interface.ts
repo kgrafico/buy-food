@@ -7,4 +7,5 @@ export interface Food {
   description: string;
   coin: string;
   voucher: boolean;
+  foodId: number;
 }

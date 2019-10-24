@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Food } from 'src/app/food/food.interface';
-import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Food } from '../../food/food.interface';
+import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -15,12 +16,14 @@ export class ShoppingCartComponent implements OnInit {
   private total: number;
   private discountDrinksPrice = 0;
   private discountCookingPrice = 0;
+  private discountVoucher = false;
   private discountDrinks = false;
   private discountCooking = false;
   private discountNameDrinks: string;
   private discountNameCooking: string;
   private discountSignDrinks: string;
   private discountSignCooking: string;
+  private calcTotal: number;
   constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
@@ -28,13 +31,22 @@ export class ShoppingCartComponent implements OnInit {
       const getTotal = this.shoppingCartService.getTotal();
 
       this.shoppingCart = data;
+
+      // DISCOUNTS?
       this.discountDrinksPrice = this.getDiscountDrinks(data, getTotal);
       this.discountCookingPrice = this.getDiscountCooking(data, getTotal);
-      const calcTotal = getTotal - this.discountDrinksPrice - this.discountCookingPrice;
+      this.calcTotal = getTotal - this.discountDrinksPrice - this.discountCookingPrice;
 
-      this.total = this.trunc(calcTotal, 2);
+      // FINAL RESULT
+      this.total = this.trunc(this.calcTotal, 2);
     },
       error => alert(error));
+  }
+
+  discountVouche(e) {
+    if (this.total >= 100) {
+      this.total = this.trunc(this.calcTotal, 2) - 50;
+    }
   }
 
   trunc(x, position = 0) {
