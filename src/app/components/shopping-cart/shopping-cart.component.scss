@@ -1,6 +1,79 @@
 .box-shopping-cart {
+    @media (max-width: 500px) {
+        display: flex;
+        justify-content: center;
+    }
     .title {
         font-family: sans-serif;
         font-weight: 800;
     }
+}
+.board {
+    display: flex;
+    justify-content: center;
+    table {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        thead {
+            display: flex;
+            justify-content: center;
+            .title-food-box {
+                display: grid;
+                grid-template-columns: repeat(3, 250px);
+                @media (max-width: 840px) {
+                    grid-template-columns: repeat(3, 170px);
+                }
+                @media (max-width: 500px) {
+                    grid-template-columns: repeat(3, 100px);
+                }
+                td {
+                    color: white;
+                    background-color: #9db5ec7a;
+                    font-family: sans-serif;
+                    font-weight: 400;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+        tbody{
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            flex-direction: column;
+            .name-food {
+                display: grid;
+                grid-template-columns: repeat(3, 250px);
+                @media (max-width: 840px) {
+                    grid-template-columns: repeat(3, 170px);
+                }
+                @media (max-width: 500px) {
+                    grid-template-columns: repeat(3, 100px);
+                }
+                td {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+
+        tfoot {
+            .footer-box {
+                display: flex;
+                justify-content: flex-end;
+                td {
+
+                }
+            }
+        }
+
+    }
+}
+
+.empty-box {
+    display: flex;
+    justify-content: center;
+    color: #c8c8ca;
 }

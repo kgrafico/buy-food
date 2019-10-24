@@ -1,41 +1,42 @@
 <div class="box-shopping-cart">
-    <span class="title">
-      Shopping Cart <span class="">({{shoppingCart.length}}) product(s)</span>
-    </span>
-  </div>
+  <span class="title">
+    Shopping Cart <span class="">({{shoppingCart.length}}) product(s)</span>
+  </span>
+</div>
   
-  <div *ngIf="shoppingCart.length>0;else shoppingCartvaciotmpl">
-    <table class="">
-      <thead>
-        <tr>
-          <td style="width:20%">Ud.</td>
-          <td>Product</td>
-          <td>Price</td>
+<div *ngIf="shoppingCart.length>0;else shoppingCartvaciotmpl" class="board">
+  <table>
+    <!-- Titles -->
+    <thead>
+      <tr class="title-food-box">
+        <td>Ud.</td>
+        <td>Product</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <!-- Shopping Cart -->
+    <tbody>
+      <tr *ngFor="let item of shoppingCart" class="name-food">
+        <td>
+          <span>1</span>
+        </td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}{{item.coin}}</td>
+      </tr>
+    </tbody>
+    <!-- finaly result -->
+    <tfoot>
+        <tr class="footer-box">
+          <td colspan="2"></td>
+          <td>Total: {{total}}£</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of shoppingCart">
-          <td  class="">
-            <span>1</span>
-          </td>
-          <td>{{item.titulo}}</td>
-          <td>{{item.precio}}€</td>
-        </tr>
-      </tbody>
-      <tfoot>
-          <tr class="">
-            <td colspan="2"></td>
-            <td>
-              Total: total €
-            </td>
-          </tr>
-      </tfoot>
-    </table>
+    </tfoot>
+  </table>
+</div>
+
+<ng-template #shoppingCartvaciotmpl class="ng-template">
+  <div class="empty-box">
+    <strong>The shopping cart is empty.</strong>
   </div>
-  
-  <ng-template #shoppingCartvaciotmpl>
-    <div class="">
-      <strong>The shopping cart is empty.</strong>
-    </div>
-  </ng-template>
+</ng-template>
   
