@@ -1,14 +1,15 @@
 <!-- [routerLink] = "['/detail', food.foodId]" -->
-<div class="project">
+<div class="project" [ngClass]="{disabled : !food.stock >= 1}">
   <div class="image"></div>
   <div class="textContent">
     <div class="header-box">
       <p class="category">{{food.category}}</p>
+      <p  *ngIf="!food.stock >= 1" [ngClass]="{disabled : !food.stock >= 1}" class="sold-out">Sold Out</p>
       <p class="price">{{food.price}}{{food.coin}}</p>
       <h5 class="description">{{food.description}}</h5>
       <h4 class="title">{{food.name}}</h4>
       <div class="button-box">
-        <button (click)="addProduct(food)" class="addButton">Add</button>
+        <button  [ngClass]="{disabled : !food.stock >= 1}" [disabled]="food.stock === 0" (click)="food.stock >= 1 && addProduct(food)" class="addButton">Add</button>
       </div>
     </div>
   </div>

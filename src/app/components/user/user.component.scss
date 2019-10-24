@@ -48,6 +48,16 @@
       padding: 9px;
     }
 
+    .sold-out {
+      position: absolute;
+      top: 0;
+      right: 11px;
+      background-color: #e04242;
+      color: white;
+      border-radius: 21px;
+      padding: 9px;
+    }
+
     .description{
       font-weight: 200; 
       font-size: .8em;
@@ -108,7 +118,17 @@
         position:relative;
         top:1px;
       }
+      .disabled {
+        background-color: #c8c8ca;
+      }
+      .disabled:hover {
+        background-color:#c8c8ca;
+      }
     }
     button:focus {outline:0;}
   }
+}
+
+.disabled {
+  background-color: #f4f4f5;
 }

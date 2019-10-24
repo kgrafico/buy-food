@@ -25,6 +25,7 @@
       <tr *ngFor="let item of shoppingCart; let indice=index" class="name-food">
         <div class="name-box">
           <td>{{item.name}}</td>
+          <td>{{item.category}}</td>
           <button (click)="removeProduct(item, indice)" ><em class="fa fa-trash fa-lg"></em></button>
         </div>
         <div class="flex-space">
