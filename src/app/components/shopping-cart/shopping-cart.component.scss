@@ -27,29 +27,6 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
-        // thead {
-        //     display: flex;
-        //     justify-content: center;
-        //     .title-food-box {
-        //         display: grid;
-        //         grid-template-columns: repeat(3, 250px);
-        //         @media (max-width: 840px) {
-        //             grid-template-columns: repeat(3, 170px);
-        //         }
-        //         @media (max-width: 500px) {
-        //             grid-template-columns: repeat(3, 100px);
-        //         }
-        //         td {
-        //             color: white;
-        //             background-color: #9db5ec7a;
-        //             font-family: sans-serif;
-        //             font-weight: 400;
-        //             width: 100%;
-        //             display: flex;
-        //             justify-content: center;
-        //         }
-        //     }
-        // }
         tbody{
             display: flex;
             width: 100%;
@@ -58,6 +35,7 @@
             flex-direction: column;
             .name-food {
                 display: flex;
+                padding: 10px 0 0 10px;
                 @media (max-width: 840px) {
                     // grid-template-columns: repeat(3, 170px);
                 }
@@ -67,9 +45,14 @@
                 .name-box {
                     width: 100%;
                     display: flex;
+                    .name {
+                        padding-right: 15px;
+                    }
+                    .category {
+                        color: #9db5ec;
+                    }
                     td {
                         display: flex;
-                        padding: 20px;
                         justify-content: flex-start;
                     }
                     button {
@@ -93,11 +76,17 @@
         }
 
         tfoot {
+            padding-top: 10px;
             .footer-box {
                 display: flex;
                 justify-content: flex-end;
+                padding: 10px 10px 15px 10px;
+                border-top: 1px solid #e8e3e3;
                 td {
-
+                    .total {
+                        font-family: sans-serif;
+                        font-weight: 800;
+                    }
                 }
             }
         }

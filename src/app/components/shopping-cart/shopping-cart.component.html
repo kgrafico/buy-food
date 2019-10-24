@@ -12,20 +12,11 @@
   
 <div *ngIf="shoppingCart.length>0;else shoppingCartvaciotmpl" class="board">
   <table>
-    <!-- Titles -->
-    <!-- <thead>
-      <tr class="title-food-box">
-        <td>Ud.</td>
-        <td>Product</td>
-        <td>Price</td>
-      </tr>
-    </thead> -->
-    <!-- Shopping Cart -->
     <tbody>
       <tr *ngFor="let item of shoppingCart; let indice=index" class="name-food">
         <div class="name-box">
-          <td>{{item.name}}</td>
-          <td>{{item.category}}</td>
+          <td class="name">{{item.name}}</td>
+          <td class="category">{{item.category}}</td>
           <button (click)="removeProduct(item, indice)" ><em class="fa fa-trash fa-lg"></em></button>
         </div>
         <div class="flex-space">
@@ -39,8 +30,7 @@
     <!-- finaly result -->
     <tfoot>
         <tr class="footer-box">
-          <td colspan="2"></td>
-          <td>Total: {{total}}£</td>
+          <td><span class="total">Total: </span><span>{{total}}£</span></td>
         </tr>
     </tfoot>
   </table>
