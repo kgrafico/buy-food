@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { UserListComponent } from './components/user-list/user-list.component';
+import { FoodListComponent } from './components/food-list/food-list.component';
 import { FoodSearchComponent } from './components/food-search/food-search.component';
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   declarations: [
     AppComponent,
     HomeComponent,
-    UserListComponent,
+    FoodListComponent,
     FoodSearchComponent,
     UserComponent,
     StringfilterPipe,
