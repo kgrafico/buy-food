@@ -6,6 +6,8 @@ import { UserListComponent } from '../user-list/user-list.component';
 import { StringfilterPipe } from 'src/app/stringfilter.pipe';
 import { UserComponent } from '../user/user.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
+import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,7 +16,15 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ HomeComponent, FoodSearchComponent, UserListComponent, StringfilterPipe, UserComponent ]
+      declarations: [
+        HomeComponent,
+        FoodSearchComponent,
+        UserListComponent,
+        StringfilterPipe,
+        UserComponent,
+        ShoppingCartComponent,
+        ShoppingCartService
+      ]
     })
     .compileComponents();
   }));

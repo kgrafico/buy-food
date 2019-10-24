@@ -1,4 +1,4 @@
-export interface FoodList {
+export interface Food {
   name: string;
   category: string;
   price: number;

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StringfilterPipe } from './stringfilter.pipe';
 import { ListPostComponent } from './components/list-post/list-post.component';
 import { PostComponent } from './components/post/post.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostComponent } from './components/post/post.component';
     UserComponent,
     StringfilterPipe,
     ListPostComponent,
-    PostComponent
+    PostComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

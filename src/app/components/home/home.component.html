@@ -1,5 +1,7 @@
-<h1>My Buy</h1>
-<div> BOX BUY</div>
+<h1>My Shopping cart</h1>
+<div class="box-shopping-cart">
+    <app-shopping-cart></app-shopping-cart>
+</div>
 <h1>Food Market</h1>
 <app-food-search (text)="onText($event)"></app-food-search>
 <app-user-list [foodFilter]="filter" [food]= "listFood"></app-user-list>
