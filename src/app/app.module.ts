@@ -13,6 +13,7 @@ import { StringfilterPipe } from './stringfilter.pipe';
 import { ListPostComponent } from './components/list-post/list-post.component';
 import { PostComponent } from './components/post/post.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

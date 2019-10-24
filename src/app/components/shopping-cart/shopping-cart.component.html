@@ -2,26 +2,37 @@
   <span class="title">
     Shopping Cart <span class="">({{shoppingCart.length}}) product(s)</span>
   </span>
+  <thead>
+      <tr class="title-food-box">
+        <td>Quantity</td>
+        <td>Price</td>
+      </tr>
+    </thead>
 </div>
   
 <div *ngIf="shoppingCart.length>0;else shoppingCartvaciotmpl" class="board">
   <table>
     <!-- Titles -->
-    <thead>
+    <!-- <thead>
       <tr class="title-food-box">
         <td>Ud.</td>
         <td>Product</td>
         <td>Price</td>
       </tr>
-    </thead>
+    </thead> -->
     <!-- Shopping Cart -->
     <tbody>
       <tr *ngFor="let item of shoppingCart" class="name-food">
-        <td>
-          <span>1</span>
-        </td>
-        <td>{{item.name}}</td>
-        <td>{{item.price}}{{item.coin}}</td>
+        <div class="name-box">
+          <td>{{item.name}}</td>
+          <button (click)="removeProduct(item)" ><em class="fa fa-trash fa-lg"></em></button>
+        </div>
+        <div class="flex-space">
+          <td>
+            <span>1</span>
+          </td>
+          <td>{{item.price}}{{item.coin}}</td>
+        </div>
       </tr>
     </tbody>
     <!-- finaly result -->

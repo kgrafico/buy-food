@@ -1,11 +1,23 @@
 .box-shopping-cart {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e3e3;
     @media (max-width: 500px) {
         display: flex;
         justify-content: center;
     }
     .title {
+        padding: 0 0px 20px 20px;
         font-family: sans-serif;
         font-weight: 800;
+    }
+    thead {
+        width: 20%;
+        tr {
+            display: flex;
+            justify-content: space-around;
+            td {}
+        }
     }
 }
 .board {
@@ -15,46 +27,67 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
-        thead {
-            display: flex;
-            justify-content: center;
-            .title-food-box {
-                display: grid;
-                grid-template-columns: repeat(3, 250px);
-                @media (max-width: 840px) {
-                    grid-template-columns: repeat(3, 170px);
-                }
-                @media (max-width: 500px) {
-                    grid-template-columns: repeat(3, 100px);
-                }
-                td {
-                    color: white;
-                    background-color: #9db5ec7a;
-                    font-family: sans-serif;
-                    font-weight: 400;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-        }
+        // thead {
+        //     display: flex;
+        //     justify-content: center;
+        //     .title-food-box {
+        //         display: grid;
+        //         grid-template-columns: repeat(3, 250px);
+        //         @media (max-width: 840px) {
+        //             grid-template-columns: repeat(3, 170px);
+        //         }
+        //         @media (max-width: 500px) {
+        //             grid-template-columns: repeat(3, 100px);
+        //         }
+        //         td {
+        //             color: white;
+        //             background-color: #9db5ec7a;
+        //             font-family: sans-serif;
+        //             font-weight: 400;
+        //             width: 100%;
+        //             display: flex;
+        //             justify-content: center;
+        //         }
+        //     }
+        // }
         tbody{
             display: flex;
+            width: 100%;
             justify-content: center;
             margin: 0 auto;
             flex-direction: column;
             .name-food {
-                display: grid;
-                grid-template-columns: repeat(3, 250px);
+                display: flex;
                 @media (max-width: 840px) {
-                    grid-template-columns: repeat(3, 170px);
+                    // grid-template-columns: repeat(3, 170px);
                 }
                 @media (max-width: 500px) {
-                    grid-template-columns: repeat(3, 100px);
+                    // grid-template-columns: repeat(3, 100px);
                 }
-                td {
+                .name-box {
+                    width: 100%;
                     display: flex;
-                    justify-content: center;
+                    td {
+                        display: flex;
+                        padding: 10px;
+                        justify-content: flex-start;
+                    }
+                    button {
+                        background-color: transparent;
+                        border: 0;
+                        width: 28px;
+                        border-radius: 20px;
+                    }
+                    button:focus {outline:0;}
+                }
+                .flex-space {
+                    display: flex,;
+                    justify-content: space-around;
+                    width: 20%;
+                    td {
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
             }
         }
@@ -74,6 +107,7 @@
 
 .empty-box {
     display: flex;
+    padding: 20px;
     justify-content: center;
     color: #c8c8ca;
 }
