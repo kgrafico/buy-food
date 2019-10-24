@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailUserComponent } from './components/detail-user/detail-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
-import { UserSearchComponent } from './components/user-search/user-search.component'
+import { FoodSearchComponent } from './components/food-search/food-search.component';
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StringfilterPipe } from './stringfilter.pipe';
@@ -19,7 +19,7 @@ import { PostComponent } from './components/post/post.component';
     HomeComponent,
     DetailUserComponent,
     UserListComponent,
-    UserSearchComponent,
+    FoodSearchComponent,
     UserComponent,
     StringfilterPipe,
     ListPostComponent,

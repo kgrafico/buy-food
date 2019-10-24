@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DetailUserComponent } from './detail-user.component';
+import { ListPostComponent } from '../list-post/list-post.component';
+import { PostComponent } from '../post/post.component';
+import { RouterModule } from '@angular/router';
 
 describe('DetailUserComponent', () => {
   let component: DetailUserComponent;
@@ -8,7 +11,8 @@ describe('DetailUserComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailUserComponent ]
+      imports: [RouterModule.forRoot([]), HttpClientTestingModule],
+      declarations: [ DetailUserComponent, ListPostComponent, PostComponent ]
     })
     .compileComponents();
   }));

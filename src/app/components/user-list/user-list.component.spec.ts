@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserListComponent } from './user-list.component';
+import { StringfilterPipe } from 'src/app/stringfilter.pipe';
+import { UserComponent } from '../user/user.component';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -8,7 +10,7 @@ describe('UserListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      declarations: [ UserListComponent, StringfilterPipe, UserComponent ]
     })
     .compileComponents();
   }));

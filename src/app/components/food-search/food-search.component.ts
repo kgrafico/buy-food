@@ -1,11 +1,11 @@
 import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 
 @Component({
-  selector: 'app-user-search',
-  templateUrl: './user-search.component.html',
-  styleUrls: ['./user-search.component.scss']
+  selector: 'app-food-search',
+  templateUrl: './food-search.component.html',
+  styleUrls: ['./food-search.component.scss']
 })
-export class UserSearchComponent implements OnInit {
+export class FoodSearchComponent implements OnInit {
 
   @Output() text = new EventEmitter<string>();
 

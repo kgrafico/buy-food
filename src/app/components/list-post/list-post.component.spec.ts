@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListPostComponent } from './list-post.component';
+import { PostComponent } from '../post/post.component';
 
 describe('ListPostComponent', () => {
   let component: ListPostComponent;
@@ -8,7 +9,7 @@ describe('ListPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListPostComponent ]
+      declarations: [ ListPostComponent, PostComponent]
     })
     .compileComponents();
   }));
