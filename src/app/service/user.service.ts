@@ -3,10 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, of } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { UserInterface } from '../interface/user.interface';
-import { UserPost } from '../post/user.post';
-import { UserComments } from '../comments/user.comments';
-import { UserAlbums } from '../albums/user.albums';
+import { Food } from '../food/food.interface';
 
 
 
@@ -15,7 +12,7 @@ import { UserAlbums } from '../albums/user.albums';
 })
 export class UserService {
 
-  food: Array<object> = [
+  food: Array<Food> = [
     { name: 'Chicken fillets', category: 'Meat & Poultry', price: 4.50, stock: 12, offert: null, voucher: false, description: '6 x 100g', coin: '£', foodId: 1 },
     { name: 'Sirolin Steaks', category: 'Meat & Poultry', price: 45.70, stock: 6, offert: 43.20, voucher: true,  description: '4 x 6oz', coin: '£', foodId: 2 },
     // tslint:disable-next-line: max-line-length
@@ -53,26 +50,6 @@ export class UserService {
 
   getFood() {
     return of(this.food);
-  }
-
-  getUsers(): Observable<UserInterface[]> {
-    return this.http
-      .get<UserInterface[]>('https://jsonplaceholder.typicode.com/todos');
-  }
-
-  getUserDetailPost(id): Observable<UserPost[]> {
-    return this.http
-      .get<UserPost[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
-  }
-
-  getUserDetailComments(id): Observable<UserComments[]> {
-    return this.http
-      .get<UserComments[]>(`https://jsonplaceholder.typicode.com/comments/${id}`);
-  }
-
-  getUserDetailAlbums(id): Observable<UserAlbums[]> {
-    return this.http
-      .get<UserAlbums[]>(`https://jsonplaceholder.typicode.com/todos/${id}`);
   }
 
 }

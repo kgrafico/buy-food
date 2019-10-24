@@ -13,11 +13,14 @@ export class ShoppingCartComponent implements OnInit {
   private shoppingCart: Array<Food> = [];
   private subscription: Subscription;
   private total: number;
-  private discount = 0;
-  private discountDrinks = false ;
+  private discountDrinksPrice = 0;
+  private discountCookingPrice = 0;
+  private discountDrinks = false;
   private discountCooking = false;
-  private discountName: string;
-  private discountSign: string;
+  private discountNameDrinks: string;
+  private discountNameCooking: string;
+  private discountSignDrinks: string;
+  private discountSignCooking: string;
   constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
@@ -25,8 +28,9 @@ export class ShoppingCartComponent implements OnInit {
       const getTotal = this.shoppingCartService.getTotal();
 
       this.shoppingCart = data;
-      this.discount = this.getDiscount(data, getTotal);
-      const calcTotal = getTotal - this.discount;
+      this.discountDrinksPrice = this.getDiscountDrinks(data, getTotal);
+      this.discountCookingPrice = this.getDiscountCooking(data, getTotal);
+      const calcTotal = getTotal - this.discountDrinksPrice - this.discountCookingPrice;
 
       this.total = this.trunc(calcTotal, 2);
     },
@@ -40,7 +44,7 @@ export class ShoppingCartComponent implements OnInit {
     return Number(numStr);
   }
 
-  getDiscount(data, getTotal) {
+  getDiscountDrinks(data, getTotal) {
     const discountDrinks = data.reduce((ac, el) => {
         ac[el.category] = (ac[el.category] || 0) + 1;
         return ac;
@@ -48,10 +52,15 @@ export class ShoppingCartComponent implements OnInit {
 
     if (discountDrinks && discountDrinks.Drinks >= 10) {
       this.discountDrinks = true;
-      this.discountName = 'Drinks';
-      this.discountSign = '10%';
+      this.discountNameDrinks = 'Drinks';
+      this.discountSignDrinks = '10%';
       return this.trunc(getTotal * 0.1, 2);
     }
+    this.discountDrinks = false;
+    return 0;
+  }
+
+  getDiscountCooking(data, getTotal) {
 
     const discountCookingBaking = data.reduce((ac, el) => {
       ac[el.category] = (ac[el.category] || 0) + el.price;
@@ -60,12 +69,14 @@ export class ShoppingCartComponent implements OnInit {
 
     if (discountCookingBaking && discountCookingBaking['Baking/Cooking Ingredients'] >= 50) {
       this.discountCooking = true;
-      this.discountName = 'Baking/Cooking Ingredients';
-      this.discountSign = '5£';
+      this.discountNameCooking = 'Baking/Cooking Ingredients';
+      this.discountSignCooking = '5£';
       return 5;
     }
+    this.discountCooking = false;
     return 0;
   }
+  
   removeProduct(food, i) {
     this.shoppingCartService.removeShoppingCart(food, i);
   }

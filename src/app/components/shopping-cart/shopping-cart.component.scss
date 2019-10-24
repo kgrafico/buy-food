@@ -80,13 +80,26 @@
             padding-top: 10px;
             .footer-box {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: flex-start;
                 padding: 10px 10px 15px 10px;
                 border-top: 1px solid #e8e3e3;
                 td {
+                    display: flex;
+                    flex-direction: column;
                     .total {
                         font-family: sans-serif;
                         font-weight: 800;
+                    }
+                    .discount-price {
+                        font-family: sans-serif;
+                        font-size: .8em;
+                        color: #adadad;
+                    }
+                    .price-total {
+                        font-family: sans-serif;
+                        color: #9DB6EC;
+                        font-weight: 600;
+                        font-size: 1.5em;
                     }
                 }
             }

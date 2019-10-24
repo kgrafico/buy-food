@@ -33,11 +33,9 @@
         <tr class="footer-box">
           <td>
             <span class="total">Total: </span>
-            <span>
-                <span *ngIf="discountDrinks || discountCooking"> {{total + discount}}£ -{{discountSign}} (Discount {{discountName}}): </span>
-              {{total}}£
-            </span>
-            
+            <span *ngIf="discountDrinks" class="discount-price"> {{total + discountDrinksPrice}}£ -{{discountSignDrinks}} (Discount {{discountNameDrinks}})</span>
+            <span *ngIf="discountCooking" class="discount-price"> {{total + discountCookingPrice}}£ -{{discountSignCooking}} (Discount {{discountNameCooking}})</span>
+            <span class="price-total">{{total}}£</span>
           </td>
         </tr>
     </tfoot>
