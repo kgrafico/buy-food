@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { FoodSearchComponent } from '../food-search/food-search.component';
 import { FoodListComponent } from '../food-list/food-list.component';
-import { UserComponent } from '../user/user.component';
+import { FoodComponent } from '../food/food.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 import { StringfilterPipe } from '../../stringfilter.pipe';
@@ -23,7 +23,7 @@ describe('HomeComponent', () => {
         FoodSearchComponent,
         FoodListComponent,
         StringfilterPipe,
-        UserComponent,
+        FoodComponent,
         ShoppingCartComponent,
         CheckVoucherComponent
       ]

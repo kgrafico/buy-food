@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FoodListComponent } from './food-list.component';
-import { UserComponent } from '../user/user.component';
+import { FoodComponent } from '../food/food.component';
 import { StringfilterPipe } from '../../stringfilter.pipe';
 
 describe('FoodListComponent', () => {
@@ -10,7 +10,7 @@ describe('FoodListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FoodListComponent, StringfilterPipe, UserComponent ]
+      declarations: [ FoodListComponent, StringfilterPipe, FoodComponent ]
     })
     .compileComponents();
   }));

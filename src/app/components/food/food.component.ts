@@ -1,12 +1,13 @@
+
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-food',
+  templateUrl: './food.component.html',
+  styleUrls: ['./food.component.scss']
 })
-export class UserComponent implements OnInit {
+export class FoodComponent implements OnInit {
 
   @Input() food: any;
   constructor(private shoppingCartService: ShoppingCartService) {}

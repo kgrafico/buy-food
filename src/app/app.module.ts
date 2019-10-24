@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
 import { FoodSearchComponent } from './components/food-search/food-search.component';
-import { UserComponent } from './components/user/user.component';
+import { FoodComponent } from './components/food/food.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StringfilterPipe } from './stringfilter.pipe';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -20,7 +20,7 @@ import { CheckVoucherComponent } from './components/check-voucher/check-voucher.
     HomeComponent,
     FoodListComponent,
     FoodSearchComponent,
-    UserComponent,
+    FoodComponent,
     StringfilterPipe,
     ShoppingCartComponent,
     CheckVoucherComponent
