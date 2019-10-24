@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FoodListComponent } from './food-list.component';
-import { StringfilterPipe } from 'src/app/stringfilter.pipe';
 import { UserComponent } from '../user/user.component';
+import { StringfilterPipe } from '../../stringfilter.pipe';
 
 describe('FoodListComponent', () => {
   let component: FoodListComponent;

@@ -3,11 +3,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { FoodSearchComponent } from '../food-search/food-search.component';
 import { FoodListComponent } from '../food-list/food-list.component';
-import { StringfilterPipe } from 'src/app/stringfilter.pipe';
 import { UserComponent } from '../user/user.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
-import { ShoppingCartService } from 'src/app/shopping-cart/shopping-cart.service';
+import { StringfilterPipe } from '../../stringfilter.pipe';
+import { CheckVoucherComponent } from '../check-voucher/check-voucher.component';
+import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
+import { FormsModule } from '@angular/forms';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,7 +17,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, FormsModule],
       declarations: [
         HomeComponent,
         FoodSearchComponent,
@@ -23,7 +25,7 @@ describe('HomeComponent', () => {
         StringfilterPipe,
         UserComponent,
         ShoppingCartComponent,
-        ShoppingCartService
+        CheckVoucherComponent
       ]
     })
     .compileComponents();
