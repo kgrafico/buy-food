@@ -34,7 +34,7 @@
           <td>
             <span class="total">Total: </span>
             <span>
-                <span *ngIf="discount > 0"> {{total + discount}}£ -10% (Discount drinks): </span>
+                <span *ngIf="discountDrinks || discountCooking"> {{total + discount}}£ -{{discountSign}} (Discount {{discountName}}): </span>
               {{total}}£
             </span>
             
