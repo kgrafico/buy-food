@@ -31,7 +31,14 @@
     <!-- finaly result -->
     <tfoot>
         <tr class="footer-box">
-          <td><span class="total">Total: </span><span>{{total}}£</span></td>
+          <td>
+            <span class="total">Total: </span>
+            <span>
+                <span *ngIf="discount > 0"> {{total + discount}}£ -10% (Discount drinks): </span>
+              {{total}}£
+            </span>
+            
+          </td>
         </tr>
     </tfoot>
   </table>
