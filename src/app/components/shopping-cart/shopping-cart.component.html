@@ -22,10 +22,10 @@
     </thead> -->
     <!-- Shopping Cart -->
     <tbody>
-      <tr *ngFor="let item of shoppingCart" class="name-food">
+      <tr *ngFor="let item of shoppingCart; let indice=index" class="name-food">
         <div class="name-box">
           <td>{{item.name}}</td>
-          <button (click)="removeProduct(item)" ><em class="fa fa-trash fa-lg"></em></button>
+          <button (click)="removeProduct(item, indice)" ><em class="fa fa-trash fa-lg"></em></button>
         </div>
         <div class="flex-space">
           <td>

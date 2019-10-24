@@ -25,8 +25,8 @@ export class ShoppingCartComponent implements OnInit {
       error => alert(error));
   }
 
-  removeProduct(food) {
-    debugger;
+  removeProduct(food, i) {
+    this.shoppingCartService.removeShoppingCart(food, i);
   }
 
 }

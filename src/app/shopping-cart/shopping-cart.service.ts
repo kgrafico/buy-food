@@ -9,16 +9,27 @@ import { Observable } from 'rxjs/Observable';
 export class ShoppingCartService {
 
   private subject: BehaviorSubject<Food[]> = new BehaviorSubject([]);
-  private itemsCarrito: Food[] = [];
+  private item: Food[] = [];
 
-  constructor() { this.subject.subscribe(data => this.itemsCarrito = data); }
+  constructor() { this.subject.subscribe(data => this.item = data); }
 
   /**
    * addShoppingCart
    * @param product
    */
   addShoppingCart(product: Food) {
-    this.subject.next([...this.itemsCarrito, product]);
+    this.subject.next([...this.item, product]);
+  }
+
+  /**
+   * removeShoppingCart
+   * @param product
+   */
+  removeShoppingCart(product: Food, i) {
+    this.item.forEach((item, index) => {
+        if (i === index && item === product) { this.item.splice(i, 1); }
+    });
+    this.subject.next(this.item);
   }
 
   /**
@@ -39,6 +50,6 @@ export class ShoppingCartService {
    * getTotal
    */
   getTotal() {
-    return this.itemsCarrito.reduce((total, product: Food) => { return total + product.price; }, 0);
+    return this.item.reduce((total, product: Food) => { return total + product.price; }, 0);
   }
 }
