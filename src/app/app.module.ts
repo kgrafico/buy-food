@@ -9,8 +9,6 @@ import { FoodSearchComponent } from './components/food-search/food-search.compon
 import { UserComponent } from './components/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StringfilterPipe } from './stringfilter.pipe';
-import { ListPostComponent } from './components/list-post/list-post.component';
-import { PostComponent } from './components/post/post.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -22,8 +20,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FoodSearchComponent,
     UserComponent,
     StringfilterPipe,
-    ListPostComponent,
-    PostComponent,
     ShoppingCartComponent
   ],
   imports: [

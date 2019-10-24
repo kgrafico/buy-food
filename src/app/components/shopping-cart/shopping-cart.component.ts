@@ -61,7 +61,6 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   getDiscountCooking(data, getTotal) {
-
     const discountCookingBaking = data.reduce((ac, el) => {
       ac[el.category] = (ac[el.category] || 0) + el.price;
       return ac;
@@ -76,7 +75,7 @@ export class ShoppingCartComponent implements OnInit {
     this.discountCooking = false;
     return 0;
   }
-  
+
   removeProduct(food, i) {
     this.shoppingCartService.removeShoppingCart(food, i);
   }
